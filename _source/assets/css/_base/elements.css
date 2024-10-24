@@ -122,7 +122,7 @@ h3 {
 }
 
 :where(p, ul, ol, dl) {
-  margin-block: 0 var(--space-sm);
+  margin-block: 0 var(--space-md);
   margin-inline: 0;
 }
 
@@ -292,4 +292,13 @@ dt {
 
 dd {
   margin-block-end: var(--space-sm);
+}
+
+sup {
+  position: absolute;
+  font-size: var(--size-xs);
+}
+sup a {
+  position: relative;
+  inset-block-start: -.5em;
 }

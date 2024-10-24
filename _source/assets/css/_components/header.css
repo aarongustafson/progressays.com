@@ -1,0 +1,11 @@
+#site-title {
+  font-family: var(--font-brand);
+  font-weight: var(--font-weight);
+  font-size: var(--size-xxl);
+  margin-block-start: var(--space-lg);
+  margin-block-end: var(--space-sm);
+}
+#site-title i {
+  font-style: normal;
+  color: var(--color-accent);
+}

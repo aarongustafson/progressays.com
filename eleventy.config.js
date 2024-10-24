@@ -8,6 +8,7 @@ import fullDate from './_source/_utilities/fullDate.js';
 import getRandom from './_source/_utilities/getRandom.js';
 import markdownify from './_source/_utilities/markdownify.js';
 import { IdAttributePlugin } from '@11ty/eleventy';
+import { footnote } from '@mdit/plugin-footnote';
 
 export default async function (eleventyConfig) {
   /* --------------------------------------------------------------------------
@@ -22,6 +23,19 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('fullDate', fullDate);
   eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('markdownify', markdownify);
+  eleventyConfig.addFilter('toAuthorList', function( authors ) {
+      if (! authors) return;
+      let str;
+      if ( authors.length > 2 ) {
+        let last = authors.pop();
+        str = authors.join(', ') + ', and ' + last;
+      } else if ( authors.length == 2 ) {
+        str = authors.join(' and ');
+      } else {
+        str = authors.join('');
+      }
+      return str;
+  });
 
   /* --------------------------------------------------------------------------
   MarkdownIt settings
@@ -30,7 +44,16 @@ export default async function (eleventyConfig) {
     html: true,
     typographer: true,
   };
-  eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));
+  eleventyConfig.setLibrary('md', markdownIt(markdownItOptions).use(footnote));
+
+
+  /* --------------------------------------------------------------------------
+  Front Matter
+  -------------------------------------------------------------------------- */
+  eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!-- more -->'
+	});
 
   /* --------------------------------------------------------------------------
   Files & folders

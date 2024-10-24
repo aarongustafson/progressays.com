@@ -5,7 +5,8 @@ layout: base
 <main class="grid {% if page.grid %}{{ page.grid }}{% endif %} pb-lg">
 
   <h1>{{ title }}</h1>
-  
+  <p>by {{ authors | toAuthorList }}</p>
+
   {{ content }}
 
 </main>

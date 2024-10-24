@@ -61,7 +61,11 @@
     <scroll-sentinel></scroll-sentinel>
 
     <animate-on-scroll>
+      {% include "header.html" %}
+
       {{ content }}
+
+      {% include "footer.html" %}
     </animate-on-scroll>
 
   </body>
