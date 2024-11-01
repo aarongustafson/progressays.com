@@ -20,7 +20,6 @@ export default function(){
       permalink: data => `/${data.page.fileSlug}/`,
       excerpt: (data) => {
         let excerpt = '';
-        console.log(data.page);
         if ('excerpt' in data.page) {
           excerpt = md.renderInline(data.page.excerpt)
             .replace(/\[\^\d+\]/gi, '') // remove footnotes
