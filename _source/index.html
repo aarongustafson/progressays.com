@@ -7,8 +7,8 @@ eleventyImport:
 {%- for post in collections.essays -%}
   {%- if post.data.title -%}
   <article>
-      <h2><a href="{{ post.permalink }}">{{ post.data.title }}</a></h2>
-      {{ post.data.excerpt }}
+      <h2><a href="{{ post.data.page.url }}">{{ post.data.title }}</a></h2>
+      <p>{{ post.data.page.excerpt | markdownify | strip_html }}</p>
   </article>
   {%- endif -%}
 {%- endfor -%}

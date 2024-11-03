@@ -46,7 +46,20 @@ export default async function (eleventyConfig) {
   };
   eleventyConfig.setLibrary('md', markdownIt(markdownItOptions).use(footnote));
 
+  /* --------------------------------------------------------------------------
+  Layout aliases
+  -------------------------------------------------------------------------- */
+  eleventyConfig.addLayoutAlias('essay', 'essay.html');
 
+  /* --------------------------------------------------------------------------
+  Collections
+  -------------------------------------------------------------------------- */
+  eleventyConfig.addCollection('essays', collectionApi => {
+		return collectionApi
+						 .getFilteredByGlob(['**/essays/*.md'])
+						 .reverse();
+	});
+  
   /* --------------------------------------------------------------------------
   Front Matter
   -------------------------------------------------------------------------- */
@@ -70,7 +83,7 @@ export default async function (eleventyConfig) {
       layouts: '_layouts',
       includes: '_includes',
     },
-    templateFormats: ['html', 'md', 'liquid'],
+    templateFormats: ['njk', 'html', 'md', 'liquid'],
     htmlTemplateEngine: 'liquid',
   };
 }

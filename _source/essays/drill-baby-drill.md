@@ -2,7 +2,8 @@
 title: "“Drill baby drill”"
 date: 2012-08-06 08:46:48 -04:00
 authors: ["Aaron Gustafson"]
-categories: ["fossil fuels", economics]
+tags: ["fossil fuels", economics]
+permalink: "/drill-baby-drill/"
 ---
 
 To all the “drill baby drill” folks: do you know who the largest oil producer is in the world? It's not Saudi Arabia. [It's the US](https://www.statista.com/chart/16274/oil-productin-countries/). By a lot.

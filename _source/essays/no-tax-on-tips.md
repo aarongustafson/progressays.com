@@ -2,7 +2,8 @@
 title: "“No tax on tips”"
 date: 2012-08-06 08:46:48 -04:00
 authors: ["Aaron Gustafson"]
-categories: [taxes, workers, economics, "Social Security", Medicare]
+tags: [taxes, workers, economics, "Social Security", Medicare]
+permalink: "/no-tax-on-tips/"
 ---
 
 While it's a great slogan, I have yet to be convinced that “no tax on tips” is a good idea.
